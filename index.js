@@ -2,10 +2,9 @@ const express = require('express');
 const chalk = require('chalk');
 const fs = require('fs');
 const cors = require('cors');
-const path = require('path');
-const bratRoutes = require('./src/brat.js'); // Pastikan path benar
-app.use(bratRoutes); // 
-
+const path = require('path');/
+const bratRoutes = require('./src/brat'); 
+app.use('/imagecreator', bratRoutes);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
