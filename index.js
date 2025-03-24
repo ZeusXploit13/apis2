@@ -24,8 +24,7 @@ const settingsPath = path.join(__dirname, './endpoints.json');
 const settings = JSON.parse(fs.readFileSync(settingsPath))
 const setPath = path.join(__dirname, './settings.json');
 const set = JSON.parse(fs.readFileSync(setPath))
-const bratRoutes = require('./src/brat'); // Pastikan path benar
-app.use(bratRoutes); // Tambahkan route ke Express
+ Tambahkan route ke Express
 global.apikey = set.apikey
 
 app.use((req, res, next) => {
