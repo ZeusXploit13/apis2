@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const router = express.Router();  // Tambahkan ini!
+const router = express.Router();  // Buat router
 
 router.get('/imagecreator/brat', async (req, res) => {
     try {
@@ -12,8 +12,8 @@ router.get('/imagecreator/brat', async (req, res) => {
             return res.status(400).json({ status: false, error: 'Text is required' });
         }
 
-        const pedo = await axios.get(`https://brat.caliphdev.com/api/brat?text=${text}`, { responseType: "arraybuffer" });
-        let imageBuffer = pedo.data;
+        const response = await axios.get(`https://brat.caliphdev.com/api/brat?text=${text}`, { responseType: "arraybuffer" });
+        let imageBuffer = response.data;
 
         res.writeHead(200, {
             'Content-Type': 'image/png',
@@ -25,4 +25,4 @@ router.get('/imagecreator/brat', async (req, res) => {
     }
 });
 
-module.exports = router;  // Ubah dari `module.exports = function app(app) {...}`
+module.exports = router; // Ekspor router dengan benar
