@@ -56,3 +56,4 @@ app.get('/download/capcut', async (req, res) => {
         }
 });
 }
+module.exports = router; 
