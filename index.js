@@ -2,7 +2,7 @@ const express = require('express');
 const chalk = require('chalk');
 const fs = require('fs');
 const cors = require('cors');
-const path = require('path');/
+const path = require('path');
 const bratRoutes = require('./src/brat'); 
 app.use('/imagecreator', bratRoutes);
 const app = express();
