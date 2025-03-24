@@ -47,13 +47,13 @@ try {
   }
   }
 }
-app.get("/api/tools/openai", async (req, res) => {
+
+module.exports = function (app) {
+app.get("/api/openai", async (req, res) => {
     const { prompt, msg, apikey } = req.query;
     if (!prompt || !msg) return res.json("Isi Parameternya!");
-    if (!apikey) return res.json("Input Apikey!");
-    }
-    const check = global.apikey
-if (!check.includes(apikey)) return res.json("Apikey Tidak Valid!.");
+    
+
     try {
         var anu = await groq(`${msg}`, `${prompt}`)
         if (!anu.status) {
@@ -74,4 +74,4 @@ if (!check.includes(apikey)) return res.json("Apikey Tidak Valid!.");
         res.status(500).json({ error: "An error occurred while fetching data." });
     }
 });
-module.exports = { groq }
+}
