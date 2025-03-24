@@ -3,6 +3,8 @@ const chalk = require('chalk');
 const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
+const bratRoutes = require('/src/brat'); // Pastikan path benar
+app.use(bratRoutes); // 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
