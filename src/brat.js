@@ -19,3 +19,4 @@ let videoBuffer = pedo.data;
         }
     });
 }
+module.exports = router; // atau objek/fungsi yang sesuai
